@@ -1,0 +1,20 @@
+numbers_used = []
+primes_found = []
+
+max_number = 100
+
+for i in range(2, max_number + 1):
+    if i in numbers_used:
+        continue
+
+    primes_found.append(i)
+
+    j = 1
+    while True:
+        multiple = j * i
+        if multiple > max_number:
+            break
+        numbers_used.append(multiple)
+        j += 1
+
+print("Found primes:", primes_found)
