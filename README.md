@@ -1,5 +1,7 @@
 # Ideas for programming workshops
 
+These are ideas for 45 minute workshops. Not suggesting them all, but maybe pick one or two for different age groups.
+
 ## The basics
 To give everyone a chance to write a working program, whatever their skill, start with Hello world
 
@@ -42,6 +44,8 @@ Use PyGame to draw shapes on screen
 ```
 pip install pygame
 ```
+
+Would suggest giving these as starters-for-ten and the ask is to modify them.
 
 ### Draw a landscape
 * `pygame_landscape.py`
