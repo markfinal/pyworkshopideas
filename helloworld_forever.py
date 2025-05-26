@@ -1,2 +1,4 @@
+i = 1
 while True:
-    print("Hello world")
+    print(f"{i} Hello world")
+    i += 1
