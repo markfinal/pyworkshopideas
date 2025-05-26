@@ -1,7 +1,8 @@
 numbers_used = []
 primes_found = []
 
-max_number = 100
+max_number_str = input("What is the hightest number? ")
+max_number = int(max_number_str)
 
 for i in range(2, max_number + 1):
     if i in numbers_used:
