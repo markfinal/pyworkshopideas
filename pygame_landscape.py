@@ -61,6 +61,7 @@ def move_sun():
         SUN_POS.x += 1
 
 
+# Loop forever, drawing and showing, until the window is closed
 while True:
     for events in pygame.event.get():
         if events.type == pygame.locals.QUIT:

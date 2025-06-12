@@ -21,6 +21,7 @@ MY_FONT = pygame.font.SysFont("Comic Sans MS", font_size)
 
 
 def draw():
+    """Draw the scene"""
     # background
     SCREEN.fill("black")
 
@@ -54,6 +55,7 @@ def draw():
     SCREEN.blit(text_surface, text_pos)
 
 
+# Loop forever, drawing and showing, until the window is closed
 while True:
     for events in pygame.event.get():
         if events.type == pygame.locals.QUIT:
