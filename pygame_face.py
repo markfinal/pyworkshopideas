@@ -36,10 +36,10 @@ def draw():
 
     # smile
     smile_bounding_box = (220, 150, 200, 200)
-    smile_start_angle = math.radians(220)
-    smile_end_angle = math.radians(320)
+    smile_start_angle_in_degrees = 220
+    smile_end_angle_in_degrees = 320
     smile_width = 10
-    pygame.draw.arc(SCREEN, "red", smile_bounding_box, smile_start_angle, smile_end_angle, smile_width)
+    pygame.draw.arc(SCREEN, "red", smile_bounding_box, math.radians(smile_start_angle_in_degrees), math.radians(smile_end_angle_in_degrees), smile_width)
 
 
 while True:
