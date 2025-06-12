@@ -20,6 +20,7 @@ ANIMATE_SUN = False
 
 
 def draw():
+    """Draw the scene"""
     # sky
     SCREEN.fill("blue")
 
@@ -55,8 +56,10 @@ def draw():
 
 
 def move_sun():
+    """Every 500 frames, move the sun to the right"""
     if FRAME_INDEX % 500 == 0:
         SUN_POS.x += 1
+
 
 while True:
     for events in pygame.event.get():
