@@ -1,31 +1,46 @@
+# use standard library packages
 import sys
 
+# use pygame packages
 import pygame
 import pygame.locals
 
-width = 640
-height = 480
+WIDTH = 640
+HEIGHT = 480
 
-screen = pygame.display.set_mode((width, height))
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 # sky
 screen.fill("blue")
 # sun
-pygame.draw.circle(screen, "yellow", (100, 50), 40)
+sun_pos = (100, 50)
+sun_radius = 40
+pygame.draw.circle(screen, "yellow", sun_pos, sun_radius)
 # land
-pygame.draw.rect(screen, "green", (0, 100, width, height - 100))
+land_bounding_box = (0, 100, WIDTH, HEIGHT - 100)
+pygame.draw.rect(screen, "green", land_bounding_box)
 # house bricks
-pygame.draw.rect(screen, "brown", (200, 200, 200, 200))
+house_bounding_box = (200, 200, 200, 200)
+pygame.draw.rect(screen, "brown", house_bounding_box)
 # house roof
-pygame.draw.polygon(screen, "red", ((200, 200), (300, 100), (400, 200)))
+roof_tri_vertex_1 = (200, 200)
+roof_tri_vertex_2 = (300, 100)
+roof_tri_vertex_3 = (400, 200)
+pygame.draw.polygon(screen, "red", (roof_tri_vertex_1, roof_tri_vertex_2, roof_tri_vertex_3))
 # door
-pygame.draw.rect(screen, "black", (300, 300, 50, 100))
+door_bounding_box = (300, 300, 50, 100)
+pygame.draw.rect(screen, "black", door_bounding_box)
 # door handle
-pygame.draw.circle(screen, "white", (310, 350), 2)
+door_handle_pos = (310, 350)
+door_handle_radius = 2
+pygame.draw.circle(screen, "white", door_handle_pos, door_handle_radius)
 # window left
-pygame.draw.rect(screen, "grey", (220, 220, 50, 50))
+left_window_bounding_box = (220, 220, 50, 50)
+pygame.draw.rect(screen, "grey", left_window_bounding_box)
 # window right
-pygame.draw.rect(screen, "grey", (320, 220, 50, 50))
+right_window_bounding_box = (320, 220, 50, 50)
+pygame.draw.rect(screen, "grey", right_window_bounding_box)
 
+# show what was drawn
 pygame.display.flip()
 
 while True:
