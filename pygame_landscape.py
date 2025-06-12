@@ -62,6 +62,9 @@ while True:
     for events in pygame.event.get():
         if events.type == pygame.locals.QUIT:
             sys.exit(0)
+        if events.type == pygame.KEYDOWN:
+            if events.key == pygame.K_SPACE:
+                ANIMATE_SUN = not ANIMATE_SUN
 
     if ANIMATE_SUN:
         move_sun()
