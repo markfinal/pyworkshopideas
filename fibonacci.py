@@ -6,6 +6,10 @@ def fibonacci(num):
     return fibonacci(num - 1) + fibonacci(num - 2)
 
 
+print("This program calculates a sequence of Fibonacci numbers.")
+print("A Fibonacci number is the sum of the previous two Fibonacci numbers.")
+print("The first two Fibonacci numbers are 1 and 1.")
+
 fibb_str = input("Which Fibonacci number? ")
 fibb = int(fibb_str)
 if fibb < 0:

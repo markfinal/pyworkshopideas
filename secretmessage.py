@@ -1,3 +1,5 @@
+print("This program turns a message into a secret code.")
+
 message = input("Tell me a secret? ")
 
 secret = ""

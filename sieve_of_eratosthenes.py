@@ -1,7 +1,10 @@
 numbers_used = []
 primes_found = []
 
-max_number_str = input("What is the hightest number? ")
+print("This program calculates all the prime numbers up to a highest number.")
+print("A prime number is a whole number only exactly divisible by 1 and itself.")
+
+max_number_str = input("What is the highest number? ")
 max_number = int(max_number_str)
 
 for i in range(2, max_number + 1):
