@@ -12,18 +12,26 @@ SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 pygame.display.set_caption("Landscape drawing")
 
+SUN_POS = pygame.math.Vector2(100, 50)
+
+FRAME_INDEX = 0
+
+ANIMATE_SUN = False
+
 
 def draw():
     # sky
     SCREEN.fill("blue")
+
     # sun
-    sun_pos = (100, 50)
     sun_radius = 40
-    pygame.draw.circle(SCREEN, "yellow", sun_pos, sun_radius)
+    pygame.draw.circle(SCREEN, "yellow", SUN_POS, sun_radius)
+
     # land
     land_bounding_box = (0, 100, WIDTH, HEIGHT - 100)
     pygame.draw.rect(SCREEN, "green", land_bounding_box)
-    # house bricks
+
+    # house walls
     house_bounding_box = (200, 200, 200, 200)
     pygame.draw.rect(SCREEN, "brown", house_bounding_box)
     # house roof
@@ -46,12 +54,21 @@ def draw():
     pygame.draw.rect(SCREEN, "grey", right_window_bounding_box)
 
 
+def move_sun():
+    if FRAME_INDEX % 500 == 0:
+        SUN_POS.x += 1
+
 while True:
     for events in pygame.event.get():
         if events.type == pygame.locals.QUIT:
             sys.exit(0)
 
+    if ANIMATE_SUN:
+        move_sun()
+
     draw()
 
     # show what was drawn
     pygame.display.flip()
+
+    FRAME_INDEX += 1
