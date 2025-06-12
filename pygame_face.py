@@ -1,5 +1,6 @@
 # use standard library packages
 import math
+import getpass
 import sys
 
 # use pygame packages
@@ -13,6 +14,10 @@ HEIGHT = 480
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 pygame.display.set_caption("Face")
+
+pygame.font.init()
+font_size = 30
+MY_FONT = pygame.font.SysFont("Comic Sans MS", font_size)
 
 
 def draw():
@@ -40,6 +45,13 @@ def draw():
     smile_end_angle_in_degrees = 320
     smile_width = 10
     pygame.draw.arc(SCREEN, "red", smile_bounding_box, math.radians(smile_start_angle_in_degrees), math.radians(smile_end_angle_in_degrees), smile_width)
+
+    # draw words
+    text_antialias = False
+    words = f"Hello, my name is {getpass.getuser()}"
+    text_surface = MY_FONT.render(words, text_antialias, "Yellow")
+    text_pos = (0, 0)
+    SCREEN.blit(text_surface, text_pos)
 
 
 while True:
