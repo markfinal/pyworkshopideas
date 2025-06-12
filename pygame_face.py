@@ -1,27 +1,39 @@
+# use standard library packages
 import math
 import sys
 
+# use pygame packages
 import pygame
 import pygame.locals
 
-width = 640
-height = 480
+WIDTH = 640
+HEIGHT = 480
 
-screen = pygame.display.set_mode((width, height))
+SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 # background
-screen.fill("black")
+SCREEN.fill("black")
 
 # round face
-pygame.draw.circle(screen, "pink", (width / 2, height / 2), 200)
+centre_pos = (WIDTH / 2, HEIGHT / 2)
+face_radius = 200
+pygame.draw.circle(SCREEN, "pink", centre_pos, face_radius)
 
 # two eyes
-pygame.draw.circle(screen, "white", (width / 3, height / 3), 50)
-pygame.draw.circle(screen, "black", (width / 3, height / 3), 10)
-pygame.draw.circle(screen, "white", (2 * width / 3, height / 3), 50)
-pygame.draw.circle(screen, "black", (2 * width / 3, height / 3), 10)
+eye_radius = 50
+pupil_radius = 10
+left_eye_pos = (WIDTH / 3, HEIGHT / 3)
+pygame.draw.circle(SCREEN, "white", left_eye_pos, eye_radius)
+pygame.draw.circle(SCREEN, "black", left_eye_pos, pupil_radius)
+right_eye_pos = (2 * WIDTH / 3, HEIGHT / 3)
+pygame.draw.circle(SCREEN, "white", right_eye_pos, eye_radius)
+pygame.draw.circle(SCREEN, "black", right_eye_pos, pupil_radius)
 
 # smile
-pygame.draw.arc(screen, "red", (220, 150, 200, 200), math.radians(220), math.radians(320), 10)
+smile_bounding_box = (220, 150, 200, 200)
+smile_start_angle = math.radians(220)
+smile_end_angle = math.radians(320)
+smile_width = 10
+pygame.draw.arc(SCREEN, "red", smile_bounding_box, smile_start_angle, smile_end_angle, smile_width)
 
 pygame.display.flip()
 
