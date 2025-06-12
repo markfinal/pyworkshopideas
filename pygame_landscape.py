@@ -10,6 +10,8 @@ HEIGHT = 480
 
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 
+pygame.display.set_caption("Landscape drawing")
+
 
 def draw():
     # sky
