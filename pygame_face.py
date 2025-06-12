@@ -6,7 +6,6 @@ import pygame.locals
 
 width = 640
 height = 480
-two_pi = 2 * 3.14159
 
 screen = pygame.display.set_mode((width, height))
 # background
