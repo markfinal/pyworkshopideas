@@ -28,7 +28,7 @@ def draw():
     pygame.draw.circle(SCREEN, "yellow", SUN_POS, sun_radius)
 
     # land
-    land_bounding_box = (0, 100, WIDTH, HEIGHT - 100)
+    land_bounding_box = (0, 150, WIDTH, HEIGHT - 150)
     pygame.draw.rect(SCREEN, "green", land_bounding_box)
 
     # house walls
