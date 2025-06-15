@@ -52,3 +52,6 @@ Would suggest giving these as starters-for-ten and the ask is to modify them.
 
 ### Draw a face
 * `pygame_face.py`
+
+### Draw shapes
+* `pygame_shapes.py`
